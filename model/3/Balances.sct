@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_wwA14B1nEeuu1vOaP5H_NQ" specification="@EventDriven&#xA;// Use the event driven execution model.&#xA;// Runs a run-to-completion step&#xA;// each time an event is raised.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'&#xA;// instead.&#xA;&#xA;@ChildFirstExecution&#xA;// In composite states, execute&#xA;// child states first.&#xA;// @ParentFirstExecution does the opposite.&#xA;&#xA;internal:&#xA;&#xA;interface:&#xA;  //  var accountId :integer&#xA;    &#xA;&#x9;var operationType : string&#xA;&#x9;var operationData : string&#xA;&#x9;var validationData : boolean = false&#xA;&#x9;&#xA;&#x9;var statusCode : integer&#xA;&#x9;&#xA;&#xA;// Define events&#xA;// and variables here. &#xA;// Use CTRL + Space for content assist.&#xA;&#xA;interface Client:&#xA;&#x9;in event callScreen&#xA;&#x9;in event request&#xA;&#xA;interface Middleware:&#xA;&#xA;interface Api:&#xA;&#xA;&#xA;interface User:&#x9;&#xA;&#x9;var id : integer&#x9;&#xA;&#x9;in event enterApp&#xA;&#x9;in event closeApp&#xA;&#x9;in event deposit&#xA;//&#x9;in event withdraw&#xA;&#x9;in event errorAction&#xA;&#xA;interface Account:&#xA;var accountId : integer&#xA;//&#x9;var ballance : real&#xA;&#x9;&#xA;&#x9;&#xA;interface Operations:&#xA;&#x9;var numberOperations : integer&#xA;&#xA;//operation deposit(a:real) : real&#xA;//operation withdraw(a:real): real&#xA;//operation average(a : real, b : real) : real&#xA;//" name="CallHandling">
+  <sgraph:Statechart xmi:id="_wwA14B1nEeuu1vOaP5H_NQ" specification="@EventDriven&#xA;// Use the event driven execution model.&#xA;// Runs a run-to-completion step&#xA;// each time an event is raised.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'&#xA;// instead.&#xA;&#xA;@ChildFirstExecution&#xA;// In composite states, execute&#xA;// child states first.&#xA;// @ParentFirstExecution does the opposite.&#xA;&#xA;interface:&#xA;    var accountId :integer&#xA;    &#xA;&#x9;var operationType : string&#xA;&#x9;var operationData : string&#xA;&#x9;var validationData : boolean = false&#xA;&#x9;&#xA;&#x9;var statusCode : integer&#xA;&#x9;&#xA;&#xA;&#xA;// Define events&#xA;// and variables here. &#xA;// Use CTRL + Space for content assist.&#xA;&#xA;interface Client:&#xA;&#x9;in event request&#xA;&#xA;&#xA;&#xA;&#xA;interface User:&#x9;&#xA;&#x9;var id : integer&#x9;&#xA;&#x9;in event enterApp&#xA;&#x9;in event closeApp&#xA;&#x9;in event deposit&#xA;//&#x9;in event withdraw&#xA;&#x9;in event errorAction&#xA;&#xA;interface Account:&#xA;var accountId : integer&#xA;//&#x9;var ballance : real&#xA;&#x9;&#xA;&#x9;&#xA;interface Operations:&#xA;&#x9;var numberOperations : integer&#xA;&#xA;//operation deposit(a:real) : real&#xA;//operation withdraw(a:real): real&#xA;//operation average(a : real, b : real) : real&#xA;//" name="CallHandling">
     <regions xmi:id="_BR0elx8ZEeuYcJuVi0vlWA" name="main region">
       <vertices xsi:type="sgraph:Entry" xmi:id="_fF-AUCLpEeuod97MscYOzA">
         <outgoingTransitions xmi:id="_fK3ucCLpEeuod97MscYOzA" specification="" target="_fK48kCLpEeuod97MscYOzA"/>
@@ -9,13 +9,13 @@
         <outgoingTransitions xmi:id="_fLxGViLpEeuod97MscYOzA" specification="User.closeApp" target="_fKxn0CLpEeuod97MscYOzA"/>
         <regions xmi:id="_fLFw4CLpEeuod97MscYOzA" name="r1">
           <vertices xsi:type="sgraph:State" xmi:id="_fLmuTCLpEeuod97MscYOzA" specification="entry / raise User.enterApp" name="LogIn" incomingTransitions="_fLs05SLpEeuod97MscYOzA">
-            <outgoingTransitions xmi:id="_fLn8ZCLpEeuod97MscYOzA" specification="Client.callScreen" target="_fLG_HiLpEeuod97MscYOzA"/>
+            <outgoingTransitions xmi:id="_fLn8ZCLpEeuod97MscYOzA" specification="User.enterApp" target="_fLG_HiLpEeuod97MscYOzA"/>
           </vertices>
           <vertices xsi:type="sgraph:Entry" xmi:id="_fLZS4yLpEeuod97MscYOzA" kind="SHALLOW_HISTORY">
             <outgoingTransitions xmi:id="_fLs05SLpEeuod97MscYOzA" specification="" target="_fLmuTCLpEeuod97MscYOzA"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_fLG_HiLpEeuod97MscYOzA" name="Screen " incomingTransitions="_fLn8ZCLpEeuod97MscYOzA _fLFw5CLpEeuod97MscYOzA _fLFw4SLpEeuod97MscYOzA">
-            <outgoingTransitions xmi:id="_fLvRISLpEeuod97MscYOzA" specification="# request >" target="_fK7Y3CLpEeuod97MscYOzA"/>
+            <outgoingTransitions xmi:id="_fLvRISLpEeuod97MscYOzA" specification="" target="_fK7Y3CLpEeuod97MscYOzA"/>
             <regions xmi:id="_fLZ59iLpEeuod97MscYOzA" name="r1">
               <vertices xsi:type="sgraph:State" xmi:id="_fLic2SLpEeuod97MscYOzA" name="WaitAction" incomingTransitions="_fLhOtSLpEeuod97MscYOzA">
                 <outgoingTransitions xmi:id="_fLlgKCLpEeuod97MscYOzA" specification="User.deposit" target="_fLeLYCLpEeuod97MscYOzA"/>
@@ -27,7 +27,7 @@
               <vertices xsi:type="sgraph:State" xmi:id="_fLeLYCLpEeuod97MscYOzA" specification="entry / operationType = &quot;depositTy&quot;;&#xD;&#xA;operationData = &quot;JSON&quot;" name="DepositAction" incomingTransitions="_fLlgKCLpEeuod97MscYOzA">
                 <outgoingTransitions xmi:id="_fLyUeSLpEeuod97MscYOzA" specification="Client.request" target="_fLwfSSLpEeuod97MscYOzA"/>
               </vertices>
-              <vertices xsi:type="sgraph:Exit" xmi:id="_fLwfSSLpEeuod97MscYOzA" name="request" incomingTransitions="_fLyUeSLpEeuod97MscYOzA _fLvRIiLpEeuod97MscYOzA"/>
+              <vertices xsi:type="sgraph:Exit" xmi:id="_fLwfSSLpEeuod97MscYOzA" incomingTransitions="_fLyUeSLpEeuod97MscYOzA _fLvRIiLpEeuod97MscYOzA"/>
               <vertices xsi:type="sgraph:State" xmi:id="_fLahDCLpEeuod97MscYOzA" specification="entry / operationType =&quot;errorTy&quot;;&#xD;&#xA;operationData = &quot;xml&quot;&#xD;&#xA;" name="ErrorAction" incomingTransitions="_fLjq8yLpEeuod97MscYOzA">
                 <outgoingTransitions xmi:id="_fLvRIiLpEeuod97MscYOzA" specification="Client.request" target="_fLwfSSLpEeuod97MscYOzA"/>
               </vertices>
@@ -216,7 +216,7 @@
                               <layoutConstraint xsi:type="notation:Location" xmi:id="_fLv4OCLpEeuod97MscYOzA"/>
                             </children>
                             <styles xsi:type="notation:ShapeStyle" xmi:id="_fLv4OSLpEeuod97MscYOzA" fontName="Verdana" lineColor="4210752"/>
-                            <layoutConstraint xsi:type="notation:Bounds" xmi:id="_fLv4OiLpEeuod97MscYOzA" x="-32" y="-20"/>
+                            <layoutConstraint xsi:type="notation:Bounds" xmi:id="_fLv4OiLpEeuod97MscYOzA"/>
                           </children>
                           <styles xsi:type="notation:ShapeStyle" xmi:id="_fLv4OyLpEeuod97MscYOzA" fontName="Verdana" lineColor="4210752"/>
                           <layoutConstraint xsi:type="notation:Bounds" xmi:id="_fLv4PCLpEeuod97MscYOzA" x="263" y="240"/>
@@ -521,7 +521,7 @@
     <edges xmi:id="_fLnVWCLpEeuod97MscYOzA" type="Transition" element="_fLn8ZCLpEeuod97MscYOzA" source="_fLmuQCLpEeuod97MscYOzA" target="_fLG_ACLpEeuod97MscYOzA">
       <children xsi:type="notation:DecorationNode" xmi:id="_fLn8YSLpEeuod97MscYOzA" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_fLn8YyLpEeuod97MscYOzA"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_fLn8YiLpEeuod97MscYOzA" x="26" y="-1"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_fLn8YiLpEeuod97MscYOzA" x="-35" y="3"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_fLn8YCLpEeuod97MscYOzA" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_fLnVXCLpEeuod97MscYOzA" fontName="Verdana"/>
@@ -587,18 +587,18 @@
     <edges xmi:id="_fLyUcCLpEeuod97MscYOzA" type="Transition" element="_fLyUeSLpEeuod97MscYOzA" source="_fLdkUCLpEeuod97MscYOzA" target="_fLv4NCLpEeuod97MscYOzA">
       <children xsi:type="notation:DecorationNode" xmi:id="_fLyUdiLpEeuod97MscYOzA" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_fLyUeCLpEeuod97MscYOzA"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_fLyUdyLpEeuod97MscYOzA" x="36" y="12"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_fLyUdyLpEeuod97MscYOzA" x="34" y="12"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_fLyUdSLpEeuod97MscYOzA" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_fLyUdCLpEeuod97MscYOzA" fontName="Verdana"/>
-      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_fLyUcyLpEeuod97MscYOzA" points="[-150, 26, -132, -68]$[-150, 100, -132, 6]$[-22, 100, -4, 6]"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_fLyUcyLpEeuod97MscYOzA" points="[-150, 26, -132, -68]$[-150, 94, -132, 0]$[-25, 94, -7, 0]"/>
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_fLyUciLpEeuod97MscYOzA" id="(1.0,0.5625)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_fLyUcSLpEeuod97MscYOzA" id="(0.5,0.5)"/>
     </edges>
     <edges xmi:id="_fLuqEiLpEeuod97MscYOzA" type="Transition" element="_fLvRISLpEeuod97MscYOzA" source="_fLG_ACLpEeuod97MscYOzA" target="_fK7Y0CLpEeuod97MscYOzA">
       <children xsi:type="notation:DecorationNode" xmi:id="_fLuqGCLpEeuod97MscYOzA" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_fLvRICLpEeuod97MscYOzA"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_fLuqGSLpEeuod97MscYOzA" x="3" y="-45"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_fLuqGSLpEeuod97MscYOzA" y="10"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_fLuqFyLpEeuod97MscYOzA" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_fLuqFiLpEeuod97MscYOzA" fontName="Verdana"/>
