@@ -5,7 +5,7 @@
       <vertices xsi:type="sgraph:Entry" xmi:id="_WrbiBCRfEeu3lb7DwkgYwg">
         <outgoingTransitions xmi:id="_WrdXMSRfEeu3lb7DwkgYwg" target="_coPesCRfEeu3lb7DwkgYwg"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_WrcJFyRfEeu3lb7DwkgYwg" specification="entry / onShelf = false" name="OnLoad" incomingTransitions="_dENB8CRfEeu3lb7DwkgYwg">
+      <vertices xsi:type="sgraph:State" xmi:id="_WrcJFyRfEeu3lb7DwkgYwg" specification="entry / onShelf = false" name="OnLoan" incomingTransitions="_dENB8CRfEeu3lb7DwkgYwg">
         <outgoingTransitions xmi:id="_coVlUCRfEeu3lb7DwkgYwg" specification="BookCopy.return" target="_coPesCRfEeu3lb7DwkgYwg"/>
         <outgoingTransitions xmi:id="_CGRAwCSfEeupX6Bec5qlFg" specification="finish" target="_71NSYCSeEeupX6Bec5qlFg"/>
       </vertices>
