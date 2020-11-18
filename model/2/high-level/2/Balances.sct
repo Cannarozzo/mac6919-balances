@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_wwA14B1nEeuu1vOaP5H_NQ" specification="@EventDriven&#xA;// Use the event driven execution model.&#xA;// Runs a run-to-completion step&#xA;// each time an event is raised.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'&#xA;// instead.&#xA;&#xA;@ChildFirstExecution&#xA;// In composite states, execute&#xA;// child states first.&#xA;// @ParentFirstExecution does the opposite.&#xA;&#xA;internal:&#xA;// substituir por ENUM&#xA;// Java Domain ou C++&#xA;&#x9;var operationType : string&#xA;&#xA;interface:&#xA;&#xA;    // Define events&#xA;// and variables here. &#xA;// Use CTRL + Space for content assist.&#xA;&#xA;&#xA;interface User:&#xA;&#x9;in event clientExit&#xA;&#x9;in event depositClick&#xA;&#x9;in event withdrawClick&#xA;&#x9;in event submitClick&#xA;//&#x9;in event withdraw&#xA;&#x9;in event errorAction&#xA;&#xA;interface Client:&#xA;&#x9;in event request&#xA;&#xA;interface Middleware:&#xA;&#x9;in event requestDispatcher&#xA;&#x9;in event forward&#xA;&#x9;in event withdrawRedirect&#xA;&#x9;&#xA;&#x9;in event OperationErrorOccurrence&#xA;&#x9;in event errorResponse&#xA;&#xA;interface Withdraw:&#xA;&#x9;in event foo&#xA;&#x9;&#xA;interface Api:&#xA;&#x9;in event requestAttribute&#xA;&#x9;in event dataParse&#xA;&#x9;in event dataErrorOccurence&#xA;&#x9;in event executeDeposit&#xA;&#x9;in event createResponse&#xA;&#x9;in event submitResponse&#xA;&#xA;" name="CallHandling">
+  <sgraph:Statechart xmi:id="_wwA14B1nEeuu1vOaP5H_NQ" specification="@EventDriven&#xA;// Use the event driven execution model.&#xA;// Runs a run-to-completion step&#xA;// each time an event is raised.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'&#xA;// instead.&#xA;&#xA;@ChildFirstExecution&#xA;// In composite states, execute&#xA;// child states first.&#xA;// @ParentFirstExecution does the opposite.&#xA;&#xA;internal:&#xA;// substituir por ENUM&#xA;// Java Domain ou C++&#xA;&#x9;var operationType : string&#xA;&#xA;interface:&#xA;&#xA;    // Define events&#xA;// and variables here. &#xA;// Use CTRL + Space for content assist.&#xA;&#xA;&#xA;interface User:&#xA;&#x9;in event clientExit&#xA;&#x9;in event depositClick&#xA;&#x9;in event withdrawClick&#xA;&#x9;in event submitClick&#xA;//&#x9;in event withdraw&#xA;&#x9;in event errorAction&#xA;&#xA;interface Middleware:&#xA;&#x9;in event requestDispatcher&#xA;&#x9;in event forward&#xA;&#x9;in event withdrawRedirect&#xA;&#x9;&#xA;&#x9;in event OperationErrorOccurrence&#xA;&#x9;in event errorResponse&#xA;&#xA;interface Withdraw:&#xA; in event foo&#xA;&#x9;&#xA;interface Deposit:&#xA;&#x9;in event requestAttribute&#xA;&#x9;in event dataParse&#xA;&#x9;in event dataErrorOccurence&#xA;&#x9;in event executeDeposit&#xA;&#x9;in event createResponse&#xA;&#x9;in event submitResponse&#xA;&#xA;" name="CallHandling">
     <regions xmi:id="_BR0elx8ZEeuYcJuVi0vlWA" name="main region">
       <vertices xsi:type="sgraph:Entry" xmi:id="_fF-AUCLpEeuod97MscYOzA">
         <outgoingTransitions xmi:id="_rxGJoCReEeu3lb7DwkgYwg" specification="" target="_nf6ocCReEeu3lb7DwkgYwg"/>
@@ -56,27 +56,27 @@
             <outgoingTransitions xmi:id="_avM-2SRyEeupX6Bec5qlFg" specification="# deposit_endpoint_response >" target="_nf6ocCReEeu3lb7DwkgYwg"/>
             <regions xmi:id="_au75FSRyEeupX6Bec5qlFg" name="r1">
               <vertices xsi:type="sgraph:State" xmi:id="_avHfTCRyEeupX6Bec5qlFg" specification="" name="Apply Deposit" incomingTransitions="_UJMyACSwEeupX6Bec5qlFg">
-                <outgoingTransitions xmi:id="_avItZCRyEeupX6Bec5qlFg" specification="Api.createResponse" target="_au8gLCRyEeupX6Bec5qlFg"/>
+                <outgoingTransitions xmi:id="_avItZCRyEeupX6Bec5qlFg" specification="Deposit.createResponse" target="_au8gLCRyEeupX6Bec5qlFg"/>
               </vertices>
               <vertices xsi:type="sgraph:State" xmi:id="_avD07CRyEeupX6Bec5qlFg" specification="" name="Handle Data Error" incomingTransitions="_TdKycCSwEeupX6Bec5qlFg">
-                <outgoingTransitions xmi:id="_avFqESRyEeupX6Bec5qlFg" specification="Api.submitResponse" target="_au-8ciRyEeupX6Bec5qlFg"/>
+                <outgoingTransitions xmi:id="_avFqESRyEeupX6Bec5qlFg" specification="Deposit.submitResponse" target="_au-8ciRyEeupX6Bec5qlFg"/>
               </vertices>
               <vertices xsi:type="sgraph:State" xmi:id="_avBYoCRyEeupX6Bec5qlFg" specification="" name="Data Validation" incomingTransitions="_QQGZgCSwEeupX6Bec5qlFg">
-                <outgoingTransitions xmi:id="_TdKycCSwEeupX6Bec5qlFg" specification="Api.dataErrorOccurence" target="_avD07CRyEeupX6Bec5qlFg"/>
-                <outgoingTransitions xmi:id="_UJMyACSwEeupX6Bec5qlFg" specification="Api.executeDeposit" target="_avHfTCRyEeupX6Bec5qlFg"/>
+                <outgoingTransitions xmi:id="_TdKycCSwEeupX6Bec5qlFg" specification="Deposit.dataErrorOccurence" target="_avD07CRyEeupX6Bec5qlFg"/>
+                <outgoingTransitions xmi:id="_UJMyACSwEeupX6Bec5qlFg" specification="Deposit.executeDeposit" target="_avHfTCRyEeupX6Bec5qlFg"/>
               </vertices>
               <vertices xsi:type="sgraph:Exit" xmi:id="_au-8ciRyEeupX6Bec5qlFg" name="deposit_endpoint_response" incomingTransitions="_avFqESRyEeupX6Bec5qlFg _au9uSCRyEeupX6Bec5qlFg"/>
               <vertices xsi:type="sgraph:State" xmi:id="_au8gLCRyEeupX6Bec5qlFg" specification="&#xD;&#xA;" name="Create Response" incomingTransitions="_avItZCRyEeupX6Bec5qlFg">
-                <outgoingTransitions xmi:id="_au9uSCRyEeupX6Bec5qlFg" specification="Api.submitResponse" target="_au-8ciRyEeupX6Bec5qlFg"/>
+                <outgoingTransitions xmi:id="_au9uSCRyEeupX6Bec5qlFg" specification="Deposit.submitResponse" target="_au-8ciRyEeupX6Bec5qlFg"/>
               </vertices>
               <vertices xsi:type="sgraph:Entry" xmi:id="_gHJ68CRyEeupX6Bec5qlFg">
                 <outgoingTransitions xmi:id="_ggK34CRyEeupX6Bec5qlFg" specification="" target="_ITa20CSwEeupX6Bec5qlFg"/>
               </vertices>
               <vertices xsi:type="sgraph:State" xmi:id="_ITa20CSwEeupX6Bec5qlFg" name="Incomming Request" incomingTransitions="_ggK34CRyEeupX6Bec5qlFg">
-                <outgoingTransitions xmi:id="_OJD0gCSwEeupX6Bec5qlFg" specification="Api.requestAttribute" target="_OJBYQCSwEeupX6Bec5qlFg"/>
+                <outgoingTransitions xmi:id="_OJD0gCSwEeupX6Bec5qlFg" specification="Deposit.requestAttribute" target="_OJBYQCSwEeupX6Bec5qlFg"/>
               </vertices>
               <vertices xsi:type="sgraph:State" xmi:id="_OJBYQCSwEeupX6Bec5qlFg" name="Data Extraction" incomingTransitions="_OJD0gCSwEeupX6Bec5qlFg">
-                <outgoingTransitions xmi:id="_QQGZgCSwEeupX6Bec5qlFg" specification="Api.dataParse" target="_avBYoCRyEeupX6Bec5qlFg"/>
+                <outgoingTransitions xmi:id="_QQGZgCSwEeupX6Bec5qlFg" specification="Deposit.dataParse" target="_avBYoCRyEeupX6Bec5qlFg"/>
               </vertices>
             </regions>
           </vertices>
