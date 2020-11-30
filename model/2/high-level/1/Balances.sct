@@ -51,7 +51,7 @@
           <vertices xsi:type="sgraph:Exit" xmi:id="_e5gcECRyEeupX6Bec5qlFg" name="api_request" incomingTransitions="_au_jcCRyEeupX6Bec5qlFg"/>
         </regions>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_nf6ocCReEeu3lb7DwkgYwg" name="Client" incomingTransitions="_nf6BTCReEeu3lb7DwkgYwg _avM-2SRyEeupX6Bec5qlFg _rxGJoCReEeu3lb7DwkgYwg">
+      <vertices xsi:type="sgraph:State" xmi:id="_nf6ocCReEeu3lb7DwkgYwg" specification="" name="Client" incomingTransitions="_nf6BTCReEeu3lb7DwkgYwg _avM-2SRyEeupX6Bec5qlFg _rxGJoCReEeu3lb7DwkgYwg">
         <outgoingTransitions xmi:id="_ngB9HCReEeu3lb7DwkgYwg" specification="# middleware_request >" target="_fK7Y3CLpEeuod97MscYOzA"/>
         <outgoingTransitions xmi:id="_xFP1ICSxEeupX6Bec5qlFg" specification="User.clientExit" target="_wawtsCSxEeupX6Bec5qlFg"/>
         <regions xmi:id="_nf7PaCReEeu3lb7DwkgYwg" name="r1">
